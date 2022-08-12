@@ -1,0 +1,50 @@
+﻿@using tatilSeyahat.Models.Siniflar
+@model List<Yorumlar>
+
+@{
+    ViewBag.Title = "Yorumlistesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+
+    <h2>Yorum listesi</h2>
+
+
+    <table class="table table-striped">
+        <tr>
+            <th>Yorum No</th>
+            <th>Kullanıcı Adı</th>
+            <th>Mail</th>
+            <th>Yorum</th>
+            <th>Blog Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+        </tr>
+
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Id</td>
+                <td>@a.KullaniciAdi</td>
+                <td>@a.Mail</td>
+                <td>@a.Yorum</td>
+                <td>@a.Blog.Baslik</td>
+                <td>
+                    <a href="/Admin/YorumSil/@a.Id" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="/Admin/YorumGetir/@a.Id" class="btn btn-success">Güncelle</a>
+                </td>
+
+            </tr>
+        }
+
+
+
+    </table>
+
+
+</div>

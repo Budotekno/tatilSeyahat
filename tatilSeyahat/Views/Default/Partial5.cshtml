@@ -1,0 +1,27 @@
+﻿@using tatilSeyahat.Models.Siniflar
+@model List<Blog>
+
+
+@foreach (var a in Model)
+{
+
+
+<div class="bot-img">
+    <img src="@a.FotoUrl" style="width:120px; height:65px;" alt="" />
+</div>
+<div class="bot-desc1">
+    <a href="/Blog/BlogDetay/@a.Id/">
+
+        @if (a.Aciklama.Length < 55)
+        {
+            @a.Aciklama.Substring(0, a.Aciklama.Length)
+        }
+        else
+        {
+            @a.Aciklama.Substring(0, 55)<span>...</span>
+
+        }
+    </a>
+</div>
+<div class="clear"></div>
+}

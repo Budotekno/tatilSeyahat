@@ -1,0 +1,40 @@
+﻿@model tatilSeyahat.Models.Siniflar.admin
+
+
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>Admin Güncelleme</h2>
+
+    @using (Html.BeginForm("AdminGuncelle", "Admin", FormMethod.Post))
+    {
+        <br />
+        <label>Kullanıcı No</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" });
+
+        <br />
+
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.Kullanici, new { @class = "form-control" });
+        <br />
+
+        <label>Şifre</label>
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" });
+
+        <br />
+
+        <a href="/Admin/Admin/" class="btn btn-danger">İptal</a>
+
+        <button class="btn btn-success">Güncelle</button>
+
+
+
+
+
+    }
+</div>
+
+

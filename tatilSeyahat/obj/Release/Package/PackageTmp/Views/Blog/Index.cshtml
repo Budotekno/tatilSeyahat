@@ -1,0 +1,121 @@
+﻿
+@model tatilSeyahat.Models.Siniflar.BlogYorum
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLoyout.cshtml";
+}
+
+
+<head>
+
+     
+
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+        <div class="container">
+
+
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+
+                    <div class="about">
+                        <h3>Bloglarım</h3>
+
+                       
+
+                    </div>
+               
+                    <div class="col-md-8 single-main">
+
+
+                        @foreach (var a in Model.blog)
+                        {
+
+                            <div class="single-grid" style="border-radius:10px; box-shadow: 8px 8px 8px #ccc,-8px -8px 8px #ccc">
+
+                                <img src=@a.FotoUrl alt=""  style="border-radius:10px; margin-bottom:20px;" width="730" /> <br />
+                               
+                                <div style="padding:0 0 10px 20px">
+
+                                    <a style="font-size:18px">@a.Baslik</a>
+
+                                    <p style="font-family:Tahoma; color:#9e9e9e ">
+                                        @if (a.Aciklama.Length < 200)
+                                        {
+                                            @a.Aciklama.Substring(0, a.Aciklama.Length)
+                                        }
+                                        else
+                                        {
+                                            @a.Aciklama.Substring(0, 200)<span>...</span>
+                                        }
+                                    </p>
+
+                                    <a href="~/Blog/BlogDetay/@a.Id" class="btn btn-info">Devamını Oku >></a>
+                            
+                                
+                                </div>
+
+
+                            </div>
+
+                            <br />
+                            <br />
+
+                        }
+
+
+                    </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>Son Bloglar</h3>
+                    <ul>
+                        @*
+                    <li><a href="#">Aliquam tincidunt mauris</a></li>
+                    <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                    <li><a href="#">Nunc dignissim risus consecu</a></li>
+                    <li><a href="#">Cras ornare tristiqu</a></li> *@
+
+                        @foreach (var i in Model.blogListe)
+                        {
+                            <li class="form-control btn btn-default" style="margin-bottom:5px;"><a style="color:black;" href="~/Blog/BlogDetay/@i.Id">@i.Baslik</a></li>
+                            
+                        }
+                    </ul>
+                </div>
+
+
+
+
+                <div class="comments">
+                    <h3>Son Yorumlar</h3>
+                    <ul>
+                      
+
+                        @foreach (var a in Model.yorumListe)
+                        {
+
+                            <li class="form-control btn btn-default" style="margin-bottom:5px;"><a style="color:black;" href="~/Blog/BlogDetay/@a.Id">@a.KullaniciAdi</a></li>
+
+                        }
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
+
+

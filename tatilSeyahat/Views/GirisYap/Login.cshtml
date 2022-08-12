@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Giriş Yap</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/webLogin/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+
+<body>
+    <div class="padding-all">
+        <div class="header">
+            <h1>Tatil Seyahat Giriş Ekranı</h1>
+        </div>
+
+        <div class="design-w3l">
+            <div class="mail-form-agile">
+                @using (Html.BeginForm("Login", "GirisYap", FormMethod.Post))
+                {
+
+                    <input type="text" name="Kullanici" autocomplete="off" placeholder="Kullanıcı Adı" required="" />
+                    <input type="password" name="Sifre" class="padding" placeholder="Şifre" required="" />
+                    <input type="submit" value="Giriş Yap" style="border-radius:7px;">
+
+                    <br />
+                    <br />
+                    
+
+                    <div style="font-size:19px; color:white ; background-color:red; border-radius:10px;" >
+                        @ViewBag.yanlıs
+
+                    </div>
+    
+
+                }
+
+             
+
+
+
+            </div>
+            <div class="clear"> </div>
+        </div>
+
+        <div class="footer">
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLoyout.cshtml";
+}
+
+
+
+<div class="container">
+
+
+    <div class="content">
+        <div class="wrap">
+            <div class="about">
+                <h3>İletişim</h3>
+
+            </div>
+        </div>
+    </div>
+
+
+    @using (Html.BeginForm("IletisimEkle", "Admin", FormMethod.Post))
+    {
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Adınız</label>
+            <input type="text" autocomplete="off" name="AdSoyad" class="form-control" id="exampleFormControlInput1" placeholder="Ad Soyad">
+        </div>
+
+        <br />
+
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Mail</label>
+            <input type="email" autocomplete="off" name="Mail" class="form-control" id="exampleFormControlInput1" placeholder="Mail Adresi">
+        </div>
+
+        <br />
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Konu</label>
+            <input type="text" autocomplete="off" name="Konu" class="form-control" id="exampleFormControlInput1" placeholder="Konu">
+        </div>
+
+        <br />
+
+
+        <div class="form-floating">
+            <label for="floatingTextarea2">Mesaj</label>
+            <textarea class="form-control" name="Mesaj" placeholder="Mesaj " id="floatingTextarea2" style="height: 100px"></textarea>
+
+        </div>
+
+        <br />
+
+        <div class="d-grid gap-2">
+            <button style="width:150px;" class="btn btn-success" type="submit">Gönder</button>
+        </div>
+
+    }
+
+    <br />
+    <br />
+    <br />
+
+
+
+</div>
+
+
+

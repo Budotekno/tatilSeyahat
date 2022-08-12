@@ -1,0 +1,40 @@
+﻿@using tatilSeyahat.Models.Siniflar
+@model List<Blog>
+
+<div class="con-bot">
+
+  
+            @foreach (var a in Model)
+            {
+
+
+                <div class="right">
+                    <div class="bot-left">
+                        <img src=@a.FotoUrl  style="width:300px; height:150px;" alt="" />
+                    </div>
+                    <div class="left-text">
+
+                        <h4>@a.Baslik</h4>
+                        <span class="doller">@a.Tarih.ToShortDateString()</span>
+                        <p>
+                            @if (a.Aciklama.Length < 65)
+                            {
+                                @a.Aciklama.Substring(0, a.Aciklama.Length)
+                            }
+                            else
+                            {
+                                @a.Aciklama.Substring(0, 65)<span>...</span>
+
+                            }
+
+                          
+                        </p>
+                        <p><a href="/Blog/BlogDetay/@a.Id/"><span class="read">Devamını Oku >></span></a></p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            }
+     
+
+
+</div>

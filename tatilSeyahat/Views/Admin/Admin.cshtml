@@ -1,0 +1,66 @@
+﻿@using tatilSeyahat.Models.Siniflar
+@model List<admin>
+
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>Admin Listesi</h2>
+
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Kullanıcı Adı</th>
+            <th>Şifre</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+        </tr>
+
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Id</td>
+                <td>@a.Kullanici</td>
+                <td>
+                    @if (a.Sifre.Length!=0)
+                    {
+                        for (int i = 0; i < a.Sifre.Length; i++)
+                        {
+                            <samp>*</samp>
+                        }
+
+                    }
+                    else
+                    {
+                        <samp></samp>
+                    }
+
+
+
+                </td>
+               
+                
+
+                <td>
+                    <a href="/Admin/AdminSil/@a.Id" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="/Admin/AdminGetir/@a.Id" class="btn btn-success">Güncelle</a>
+                </td>
+
+            </tr>
+        }
+
+
+
+    </table>
+
+    <a class="btn btn-warning" href="/Admin/AdminEkleSayfasi/">Admin Ekle</a>
+</div>
+
+
+

@@ -1,0 +1,48 @@
+﻿@using tatilSeyahat.Models.Siniflar
+@model List<Hakkimizda>
+
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_MainLoyout.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Free Easy-Trip Website Template | About :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+
+    <div class="content">
+        <div class="wrap">
+            <div class="about">
+                <h3>Hakkımızda</h3>
+
+                @foreach (var i in Model)
+                {
+            <div class="row">
+                <div class="col-12">
+                    <img src="@i.FotoUrl" width="970" style="border-radius:10px;" alt="" />
+
+                </div>
+
+            </div>
+                    <p>@i.Aciklama</p>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

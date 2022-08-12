@@ -1,0 +1,57 @@
+﻿@using tatilSeyahat.Models.Siniflar
+@model List<Blog>
+
+
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+
+    <div class="box-left">
+
+        @foreach (var i in Model)
+        {
+           
+                <div class="bot-img">
+                    <img src="@i.FotoUrl" style="width:120px; height:65px;" alt="" />
+                </div>
+                <div class="bot-desc">
+                    <a href="/Blog/BlogDetay/@i.Id/">
+                        @if (i.Aciklama.Length < 55)
+                        {
+                            @i.Aciklama.Substring(0, i.Aciklama.Length)
+                        }
+                        else
+                        {
+                            @i.Aciklama.Substring(0, 55)<span>...</span>
+
+                        }
+
+                    </a>
+                </div>
+                <div class="clear"></div>
+        }
+     
+    </div>
+
+
+
+
+
+    <div class="box1-left">
+
+
+        @Html.Action("Partial5","Default")
+
+
+    
+    </div>
+
+
+</div>
+<div class="clear"></div>
+
+
+
+
+
+
+

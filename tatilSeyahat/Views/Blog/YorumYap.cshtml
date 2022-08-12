@@ -1,0 +1,16 @@
+﻿
+<div class="content-form">
+    <h3>Yorum Yapınız</h3>
+
+  
+    <form method="post">
+       
+        <input type="hidden"  placeholder="Blog No"  value="@ViewBag.tasinanId" name="BlogId" required />
+        <input type="text" autocomplete="off" placeholder="Ad Soyad" name="KullaniciAdi" required />
+        <input type="text" autocomplete="off" placeholder="Mail" name="Mail" required />
+
+        <textarea placeholder="Yorumunuz" name="Yorum"></textarea>
+        <input type="submit" value="Yorum Yap" />
+    </form>
+
+</div>

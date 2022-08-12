@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "AdminEkleSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <br />
+    <h2>Admin Ekle</h2>
+    <br />
+    <br />
+    @using (Html.BeginForm("AdminEkle", "Admin", FormMethod.Post))
+    {
+
+        <label>Kullanıcı Adı</label>
+        <input type="text" required class="form-control" autocomplete="off" placeholder="Kullanıcı Adı" name="Kullanici" /> <br />
+        <label>Şifre</label>
+        <input type="password" required autocomplete="off" id="txtSifre" class="form-control" placeholder="Şifre" name="Sifre" /> <br />
+        <a href="/Admin/Admin/" class="btn btn-danger">İptal</a>
+
+        <button class="btn btn-warning">Ekle</button>
+    }
+</div>
+
+
+
+

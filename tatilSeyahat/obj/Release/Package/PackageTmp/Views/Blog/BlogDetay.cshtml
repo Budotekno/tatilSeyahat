@@ -1,0 +1,94 @@
+﻿@model tatilSeyahat.Models.Siniflar.BlogYorum
+
+
+
+
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/_MainLoyout.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/webBlog/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/webBlog/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    
+
+</head>
+<body>
+    
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+
+
+
+                @foreach (var a in Model.blog)
+                {
+
+                    <div class="single-grid">
+                        <img src=@a.FotoUrl alt="" style="margin-bottom:20px;" />
+
+                        <h3>
+                            <label>@a.Baslik</label>
+
+                        </h3>
+
+
+                        <p>
+                            @a.Aciklama
+                        </p>
+                    </div>
+
+                    <br />
+                    <br />
+
+                }
+
+
+                @foreach (var i in Model.yorum)
+                {
+                    <ul class="comment-list">
+                        <li>
+                            <div>
+                                <img src="~/webBlog/images/avatar.png" class="img-responsive" alt="">
+                            </div>
+                            <div class="desc" >
+                                
+                                <p><strong style="color:darkred">@i.KullaniciAdi</strong> : @i.Yorum </p>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                }
+
+                @Html.Action("YorumYap","Blog")
+                
+            </div>
+
+            
+            
+        </div>
+    </div>
+    
+   
+    </body>
+</html>
+
+
+
+

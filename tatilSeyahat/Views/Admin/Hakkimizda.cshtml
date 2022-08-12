@@ -1,0 +1,54 @@
+﻿
+@using tatilSeyahat.Models.Siniflar
+@model List<Hakkimizda> 
+
+
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <h2>Hakkımızda</h2>
+    <br />
+
+
+    @using (Html.BeginForm("HakkimdaGuncelle", "Admin", FormMethod.Post))
+    {
+
+
+        foreach (var i in Model)
+        {
+         
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Hakkımızda Yazısı</label>
+                <textarea class="form-control" name="Aciklama" style="height: 250px"  placeholder="Hakkımızda yazısını yazınız">@i.Aciklama</textarea>
+            </div>
+            <br />
+            <div class="mb-3">
+
+                <label for="exampleFormControlInput1" class="form-label">Hakkımızda Fotoğraf Url</label> <br />
+                <img src="@i.FotoUrl" width="500" /> <br /> <br />
+                <input type="text" name="FotoUrl"  value="@i.FotoUrl" class="form-control" id="exampleFormControlInput1" placeholder="Url giriniz">
+            </div>
+            <br />
+
+        }
+
+       
+        <div class="d-grid gap-2">
+            <button class="btn btn-success" style="width:150px" type="submit">Güncelle</button>
+        </div>
+
+
+
+
+
+    }
+
+
+</div>
+
